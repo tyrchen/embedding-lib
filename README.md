@@ -26,6 +26,20 @@ embedding-lib = { git = "https://github.com/tyrchen/embedding-lib", version = "0
 tokio = { version = "1.0", features = ["full"] }
 ```
 
+If you want to use Metal acceleration, you can add this to your `Cargo.toml`:
+
+```toml
+[dependencies]
+embedding-lib = { git = "https://github.com/tyrchen/embedding-lib", version = "0.1.0", features = ["metal"] }
+```
+
+If you want to use hardware acceleration, you can add this to your `Cargo.toml`:
+
+```toml
+[dependencies]
+embedding-lib = { git = "https://github.com/tyrchen/embedding-lib", version = "0.1.0", features = ["metal", "accelerate"] }
+```
+
 ### Basic Usage
 
 ```rust

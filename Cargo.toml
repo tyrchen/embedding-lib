@@ -12,6 +12,11 @@ readme = "README.md"
 categories = ["text-processing", "machine-learning"]
 keywords = ["embeddings", "nlp", "transformers", "huggingface", "text"]
 
+[features]
+default = []
+metal = ["text-embeddings-backend/metal"]
+accelerate = ["text-embeddings-backend/accelerate"]
+
 [dependencies]
 anyhow = "1.0.98"
 hf-hub = { version = "0.4", features = ["tokio"] }
@@ -20,7 +25,6 @@ serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.142"
 text-embeddings-backend = { git = "https://github.com/huggingface/text-embeddings-inference", version = "1.8.0", features = [
   "candle",
-  "metal",
 ] }
 text-embeddings-core = { git = "https://github.com/huggingface/text-embeddings-inference", version = "1.8.0" }
 thiserror = "2.0"

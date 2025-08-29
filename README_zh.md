@@ -26,6 +26,20 @@ embedding-lib = { git = "https://github.com/tyrchen/embedding-lib", version = "0
 tokio = { version = "1.0", features = ["full"] }
 ```
 
+如果你想使用 Metal 加速，可以添加这个到你的 `Cargo.toml`:
+
+```toml
+[dependencies]
+embedding-lib = { git = "https://github.com/tyrchen/embedding-lib", version = "0.1.0", features = ["metal"] }
+```
+
+如果你想使用 CPU 加速，可以添加这个到你的 `Cargo.toml`:
+
+```toml
+[dependencies]
+embedding-lib = { git = "https://github.com/tyrchen/embedding-lib", version = "0.1.0", features = ["accelerate"] }
+```
+
 ### 基础用法
 
 ```rust
