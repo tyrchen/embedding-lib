@@ -1,0 +1,35 @@
+[package]
+name = "embedding-lib"
+version = "0.1.0"
+authors = ["Tyr Chen <tyr.chen@gmail.com>"]
+edition = "2024"
+license = "MIT"
+documentation = "https://docs.rs/"
+repository = "https://github.com/tyrchen/embedding-lib"
+homepage = "https://github.com/tyrchen/embedding-lib"
+description = "A high-performance text embeddings library built on top of text-embeddings-inference"
+readme = "README.md"
+categories = ["text-processing", "machine-learning"]
+keywords = ["embeddings", "nlp", "transformers", "huggingface", "text"]
+
+[dependencies]
+anyhow = "1.0.98"
+hf-hub = { version = "0.4", features = ["tokio"] }
+num_cpus = "1.16.0"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.142"
+text-embeddings-backend = { git = "https://github.com/huggingface/text-embeddings-inference", version = "1.8.0", features = [
+  "candle",
+  "metal",
+] }
+text-embeddings-core = { git = "https://github.com/huggingface/text-embeddings-inference", version = "1.8.0" }
+thiserror = "2.0"
+tokenizers = { version = "0.21.0", default-features = false, features = [
+  "onig",
+  "esaxx_fast",
+] }
+tokio = { version = "1.47.1", features = ["rt", "rt-multi-thread", "macros"] }
+tracing = "0.1"
+
+[dev-dependencies]
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
