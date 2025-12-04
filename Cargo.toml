@@ -1,6 +1,6 @@
 [package]
 name = "embedding-lib"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Tyr Chen <tyr.chen@gmail.com>"]
 edition = "2024"
 license = "MIT"
@@ -18,21 +18,21 @@ metal = ["text-embeddings-backend/metal"]
 accelerate = ["text-embeddings-backend/accelerate"]
 
 [dependencies]
-anyhow = "1.0.98"
+anyhow = "1.0.100"
 hf-hub = { version = "0.4", features = ["tokio"] }
-num_cpus = "1.16.0"
-serde = { version = "1.0.219", features = ["derive"] }
-serde_json = "1.0.142"
-text-embeddings-backend = { git = "https://github.com/huggingface/text-embeddings-inference", version = "1.8.0", features = [
+num_cpus = "1.17.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+text-embeddings-backend = { git = "https://github.com/huggingface/text-embeddings-inference", version = "1.8.3", features = [
   "candle",
 ] }
-text-embeddings-core = { git = "https://github.com/huggingface/text-embeddings-inference", version = "1.8.0" }
+text-embeddings-core = { git = "https://github.com/huggingface/text-embeddings-inference", version = "1.8.3" }
 thiserror = "2.0"
-tokenizers = { version = "0.21.0", default-features = false, features = [
+tokenizers = { version = "0.21.4", default-features = false, features = [
   "onig",
   "esaxx_fast",
 ] }
-tokio = { version = "1.47.1", features = ["rt", "rt-multi-thread", "macros"] }
+tokio = { version = "1.48.0", features = ["rt", "rt-multi-thread", "macros"] }
 tracing = "0.1"
 
 [dev-dependencies]
